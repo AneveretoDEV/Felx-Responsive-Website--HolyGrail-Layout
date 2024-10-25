@@ -1,0 +1,98 @@
+body {
+    padding: 0;
+    margin: 0;
+    font-family: sans-serif;
+}
+
+div, body, .header input[type="checkbox"], .header .fa-bars, .header .fa-x {
+    box-sizing: border-box;
+}
+
+main, aside {
+    border: 2px solid red;
+}
+
+.header {
+    color: rgb(0, 0, 0);
+    display: flex;
+    background-color: rgb(87, 193, 255);
+    flex-direction: row;
+    justify-content: end;
+    position: relative;
+}
+
+.header .fa-bars, .header .fa-x {
+    font-size: 48px;
+    pointer-events: none;
+}
+
+.header input[type="checkbox"] {
+    opacity: 0;
+}
+
+.header input[type="checkbox"], .header .fa-bars, .header .fa-x {
+    position: absolute;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    right: 0;
+    top: 0;
+    width: 48px;
+    height: 48px;
+}
+
+.header nav {
+    display: none;
+}
+
+.header nav > ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    padding: 0;
+}
+
+.fa-x {
+    color: white;
+}
+
+.header input:checked ~ nav {
+    display: block;
+    margin: auto;
+    color: white;
+}
+
+.header input:checked ~ .fa-bars {
+    display: none;
+}
+
+.header input:not(:checked) ~ .fa-x {
+    display: none;
+}
+#main-navbar li {
+    list-style: none;
+    margin: 10px;
+    padding: 5px 10px;
+}
+
+.header li:hover {
+    background-color: rgb(43, 166, 236);
+    transition: background-color, 1s, 0.5s ;
+}
+
+/* Desktop Styles */
+@media screen and (min-width: 700px) {
+    .header nav {
+        display: inline;
+    }
+
+    #main-navbar ul {
+        display: flex;
+        padding: 0;
+    }
+    
+    #main-navbar li {
+        margin: 15px;
+    }   
+}
